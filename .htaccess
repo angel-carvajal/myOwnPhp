@@ -6,3 +6,4 @@ RewriteBase /myOwnPhp
  RewriteCond %{REQUEST_FILENAME} !-l  
  
  RewriteRule ^(.+)$ resources/index.php?routeName=$1 [QSA,NC,L] 
+ 
