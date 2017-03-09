@@ -1,9 +1,8 @@
 RewriteEngine on  
 RewriteBase /myOwnPhp
 
- RewriteCond %{REQUEST_FILENAME} !-d  
- RewriteCond %{REQUEST_FILENAME} !-f  
- RewriteCond %{REQUEST_FILENAME} !-l  
- 
- RewriteRule ^(.+)$ resources/index.php?routeName=$1 [QSA,NC,L] 
- 
+RewriteCond %{REQUEST_FILENAME} !-d  
+RewriteCond %{REQUEST_FILENAME} !-f  
+RewriteCond %{REQUEST_FILENAME} !-l  
+
+RewriteRule ^(.+)$ resources/index.php?routeName=$1 [QSA,NC,L]
