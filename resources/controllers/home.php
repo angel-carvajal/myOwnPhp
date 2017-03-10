@@ -1,6 +1,7 @@
 <?php namespace controllers;
 
 	Use interfaces\controller as Controller;
+	Use library\template as Template;
 
 	/**
 	* Home controller that run at Route /home
@@ -13,6 +14,12 @@
 		* @var array
 		*/
 		private $templateToRender = array();
+
+		/**
+		* Properties to be available on the view
+		* @var array
+		*/
+		private $properties = array();
 		
 		/**
 		* Trigger action requested
@@ -41,11 +48,9 @@
 		*/
 		public function render()
 		{
-			$tempalteList = $this->templateToRender;
-			foreach ($tempalteList as $template) {
-				include($template);
-			}
-			exit;
+			$templateList = $this->templateToRender;
+			$properties = $this->properties;
+			return New Template($templateList, $properties);
 
 		} // render()
 
