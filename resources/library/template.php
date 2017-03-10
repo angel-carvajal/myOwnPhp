@@ -33,5 +33,7 @@
 			$this->$property=$value;
 
 		} // setProperties()
+		
 	}
+
 ?>
